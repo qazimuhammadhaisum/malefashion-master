@@ -58,6 +58,7 @@
         allowParentLinks: true
     });
 
+    
     /*------------------
         Accordin Active
     --------------------*/
@@ -83,6 +84,21 @@
     /*-----------------------
         Hero Slider
     ------------------------*/
+    // $(".hero__slider").owlCarousel({
+    //     loop: true,
+    //     margin: 0,
+    //     items: 1,
+    //     dots: false,
+    //     nav: true,
+    //     navText: ["<span class='arrow_left'><span/>", "<span class='arrow_right'><span/>"],
+    //     animateOut: 'fadeOut',
+    //     animateIn: 'fadeIn',
+    //     smartSpeed: 1200,
+    //     autoHeight: false,
+    //     autoplay: false
+    // });
+
+    
     $(".hero__slider").owlCarousel({
         loop: true,
         margin: 0,
@@ -90,12 +106,11 @@
         dots: false,
         nav: true,
         navText: ["<span class='arrow_left'><span/>", "<span class='arrow_right'><span/>"],
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
         smartSpeed: 1200,
-        autoHeight: false,
+        autoHeight: true,
         autoplay: false
     });
+    
 
     /*--------------------------
         Select
@@ -214,3 +229,62 @@
     });
 
 })(jQuery);
+
+//scroll aniamtion Effect GPt
+document.addEventListener("DOMContentLoaded", function() {
+    let sections = document.querySelectorAll(".hidden");
+
+    let observer = new IntersectionObserver(entries => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => { // Staggered animation
+                    entry.target.classList.add("show");
+                }, index * 200); // Har element thoda delay se show hoga
+                observer.unobserve(entry.target); // Ek baar trigger hone ke baad dobara na ho
+            }
+        });
+    }, { threshold: 0.2 }); // Jab 20% visible hoga tab trigger hoga
+
+    sections.forEach(section => observer.observe(section));
+});
+
+
+
+//end animation
+
+// testmentials slider
+
+// Swiper JS -->
+
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,  // Infinite loop
+        autoplay: {
+            delay: 3000, // 3-second auto-slide
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});
+/* add cart hero section script */
+var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    effect: "fade",
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+// script End
