@@ -1,26 +1,3 @@
-/*------------------------------------------------------------------
-[Table of contents]
-
-1.  Template default CSS
-	1.1	Variables
-	1.2	Mixins
-	1.3	Flexbox
-	1.4	Reset
-2.  Helper Css
-3.  Header Section
-4.  Hero Section
-5.  Banner Section
-6.  Product Section
-7.  Intagram Section
-8.  Latest Section
-9.  Contact
-10.  Footer Style
--------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-/* Template default CSS
-/*----------------------------------------*/
-
 html,
 body {
 	height: 100%;
@@ -309,6 +286,10 @@ ol {
 
 .header {
 	background:#333;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	transition: top 0.5s ease-in-out;
 }
 
 .header__top {
@@ -797,7 +778,7 @@ ol {
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
 }
-/* Gpt  */
+
   /* General Banner Styles */
   .banner {
 	padding: 80px 0;
@@ -885,7 +866,10 @@ ol {
 	100% { transform: translate(-50px, -50px); }
 }
 
-/* End Gpt */
+/* End  */
+
+/* leathe jaket customize page  */
+
 /*---------------------
   Categories
 -----------------------*/
@@ -1278,43 +1262,10 @@ ol {
     }
 }
 
-
-
-/* End Gpt */
+/* End */
 /*---------------------
   Instagram
 -----------------------*/
-/* 
-.instagram {
-	padding-bottom: 0;
-}
-
-.instagram__pic__item {
-	width: 33.33%;
-	float: left;
-	height: 261px;
-	background-position: center center;
-}
-
-.instagram__text {
-	padding-top: 130px;
-}
-
-.instagram__text h2 {
-	color: #FFFFFF;
-	font-weight: 700;
-	margin-bottom: 30px;
-}
-
-.instagram__text p {
-	margin-bottom: 65px;
-}
-
-.instagram__text h3 {
-	color: #e53637;
-	font-weight: 700;
-} */
-/* Gpt */
 .instagram {
     padding-bottom: 0;
     position: relative;
@@ -1702,6 +1653,116 @@ ol {
 } 
 
 
+
+/* custom-jacket-section Style */
+
+   .custom-jacket-section {
+	text-align: center;
+	padding: 80px 20px;
+	background: linear-gradient(to right, #111, #333);
+	color: white;
+	border-radius: 15px;
+	position: relative;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading & Paragraph */
+.custom-jacket-section h2 {
+	font-size: 2.8em;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	animation: fadeInDown 1s ease-in-out;
+}
+
+.custom-jacket-section p {
+	font-size: 1.2em;
+	max-width: 700px;
+	margin: 0 auto;
+	line-height: 1.6;
+	color: #ddd;
+	animation: fadeInUp 1s ease-in-out;
+}
+
+/* Button */
+.custom-jacket-btn {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 12px 30px;
+	font-size: 1.2em;
+	font-weight: 700;
+	color: white;
+	background: #e53637;
+	border: none;
+	border-radius: 8px;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 4px 15px rgba(229, 54, 55, 0.5);
+}
+
+.custom-jacket-btn:hover {
+	background: #ff4757;
+	transform: scale(1.05);
+	box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+}
+
+/* Submit Button */
+.submit-btn {
+	background: #e53637;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.submit-btn:hover {
+	background: #ff4757;
+}
+
+/* Image Animation  */
+.jacket-image {
+	width: 200px;
+    position: absolute;
+    bottom: -50px;
+    right: 10%;
+    opacity: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1.5s ease-in-out forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+	from { opacity: 0; transform: translateY(-30px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translateY(30px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+	from { transform: translateY(50px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+	.jacket-image { display: none; }
+}
+
+/* Custom Jacket Section SPEED DESK */
+
 /*---------------------
   Shop
 -----------------------*/
@@ -1758,225 +1819,6 @@ ol {
 	top: 0;
 	height: 100%;
 }
-/* 
-.shop__sidebar__accordion .card {
-	border: none;
-	border-radius: 0;
-	margin-bottom: 25px;
-}
-
-.shop__sidebar__accordion .card:last-child {
-	margin-bottom: 0;
-}
-
-.shop__sidebar__accordion .card:last-child .card-body {
-	padding-bottom: 0;
-	border-bottom: none;
-}
-
-.shop__sidebar__accordion .card-body {
-	padding: 0;
-	padding-top: 10px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #e5e5e5;
-}
-
-.shop__sidebar__accordion .card-heading {
-	cursor: pointer;
-}
-
-.shop__sidebar__accordion .card-heading a {
-	color: #111111;
-	font-size: 16px;
-	font-weight: 700;
-	text-transform: uppercase;
-	display: block;
-}
-
-.shop__sidebar__categories ul,
-.shop__sidebar__price ul,
-.shop__sidebar__brand ul {
-	height: 225px;
-}
-
-.shop__sidebar__categories ul li,
-.shop__sidebar__price ul li,
-.shop__sidebar__brand ul li {
-	list-style: none;
-}
-
-.shop__sidebar__categories ul li a,
-.shop__sidebar__price ul li a,
-.shop__sidebar__brand ul li a {
-	color: #b7b7b7;
-	font-size: 15px;
-	line-height: 32px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.shop__sidebar__categories ul li a:hover,
-.shop__sidebar__price ul li a:hover,
-.shop__sidebar__brand ul li a:hover {
-	color: #111111;
-}
-
-.shop__sidebar__brand ul {
-	height: auto;
-}
-
-.shop__sidebar__price ul {
-	height: auto;
-}
-
-.shop__sidebar__size {
-	padding-top: 15px;
-}
-
-.shop__sidebar__size label {
-	color: #111111;
-	font-size: 15px;
-	font-weight: 700;
-	text-transform: uppercase;
-	display: inline-block;
-	border: 1px solid #e5e5e5;
-	padding: 6px 25px;
-	margin-bottom: 10px;
-	margin-right: 5px;
-	cursor: pointer;
-}
-
-.shop__sidebar__size label.active {
-	background: #111111;
-	color: #ffffff;
-	border-color: #111111;
-}
-
-.shop__sidebar__size label input {
-	position: absolute;
-	visibility: hidden;
-}
-
-.shop__sidebar__color {
-	padding-top: 15px;
-}
-
-.shop__sidebar__color label {
-	height: 30px;
-	width: 30px;
-	border-radius: 50%;
-	position: relative;
-	margin-right: 10px;
-	display: inline-block;
-	margin-bottom: 10px;
-	cursor: pointer;
-}
-
-.shop__sidebar__color label.c-1 {
-	background: #0b090c;
-}
-
-.shop__sidebar__color label.c-2 {
-	background: #20315f;
-}
-
-.shop__sidebar__color label.c-3 {
-	background: #f1af4d;
-}
-
-.shop__sidebar__color label.c-4 {
-	background: #636068;
-}
-
-.shop__sidebar__color label.c-5 {
-	background: #57594d;
-}
-
-.shop__sidebar__color label.c-6 {
-	background: #e8bac4;
-}
-
-.shop__sidebar__color label.c-7 {
-	background: #d6c1d7;
-}
-
-.shop__sidebar__color label.c-8 {
-	background: #ed1c24;
-}
-
-.shop__sidebar__color label.c-9 {
-	background: #ffffff;
-}
-
-.shop__sidebar__color label:after {
-	position: absolute;
-	left: -3px;
-	top: -3px;
-	height: 36px;
-	width: 36px;
-	border: 1px solid #e5e5e5;
-	content: "";
-	border-radius: 50%;
-}
-
-.shop__sidebar__color label input {
-	position: absolute;
-	visibility: hidden;
-}
-
-.shop__sidebar__tags {
-	padding-top: 15px;
-}
-
-.shop__sidebar__tags a {
-	color: #404040;
-	font-size: 13px;
-	font-weight: 700;
-	background: #f1f5f8;
-	padding: 5px 18px;
-	display: inline-block;
-	text-transform: uppercase;
-	margin-right: 6px;
-	margin-bottom: 10px;
-	-webkit-transition: all, 0.3s;
-	-o-transition: all, 0.3s;
-	transition: all, 0.3s;
-}
-
-.shop__sidebar__tags a:hover {
-	background: #111111;
-	color: #ffffff;
-}
-
-.shop__sidebar__accordion .card-heading a:after,
-.shop__sidebar__accordion .card-heading>a.active[aria-expanded=false]:after {
-	content: "";
-	font-family: "FontAwesome";
-	font-size: 24px;
-	font-weight: 700;
-	color: #111111;
-	position: absolute;
-	right: 0;
-	top: 2px;
-	line-height: 20px;
-}
-
-.shop__sidebar__accordion .card-heading.active a:after {
-	content: "";
-	font-family: "FontAwesome";
-	font-size: 24px;
-	font-weight: 700;
-	color: #111111;
-	position: absolute;
-	right: 0;
-	top: 2px;
-	line-height: 20px;
-} */
-
-
-
-/* gpt side bar stye with animation */
 /* General styling */
 /* General Sidebar Styling */
 .shop__sidebar__accordion {
@@ -2179,7 +2021,7 @@ ol {
     color: #fff;
 }
 
-/* End styele and animation GPT */
+/* End styele and animation  */
 .shop__product__option {
 	margin-bottom: 45px;
 }
@@ -2188,45 +2030,7 @@ ol {
 	color: #111111;
 	margin-bottom: 0;
 }
-
-/* .shop__product__option__right {
-	text-align: right;
-}
-
-.shop__product__option__right p {
-	display: inline-block;
-	margin-bottom: 0;
-}
-
-.shop__product__option__right .nice-select {
-	float: none;
-	display: inline-block;
-	padding: 0;
-	line-height: 26px;
-	height: auto;
-	border: none;
-	padding-right: 28px;
-}
-
-.shop__product__option__right .nice-select:after {
-	border-bottom: 1.5px solid #111111;
-	border-right: 1.5px solid #111111;
-	height: 8px;
-	right: 12px;
-	width: 8px;
-}
-
-.shop__product__option__right .nice-select span {
-	color: #111111;
-	font-size: 15px;
-	font-weight: 700;
-}
-
-.shop__product__option__right .nice-select .list {
-	border-radius: 0;
-} */
-
-/* Gpt option right style and animation  */
+/*  option right style and animation  */
 /* Sort By Price - Right Alignment & Styling */
 /* Sort By Price - Right Alignment & Styling */
 .shop__product__option__right {
@@ -2796,6 +2600,180 @@ ol {
 	text-align: center;
 }
 
+
+/* FAQ SECTION STYLE */
+/* General Styling */
+.faq-section {
+    background: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+.faq-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+	color: #111111;
+}
+.faq-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.faq-accordion {
+    max-width: 600px;
+    margin: auto;
+}
+.faq-item {
+    margin-bottom: 10px;
+}
+.faq-question {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.faq-question:hover {
+    background: #444;
+}
+.faq-answer {
+    display: none;
+    background: #fff;
+    padding: 10px;
+    border-left: 3px solid #111;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.faq-contact {
+    margin-top: 30px;
+	
+}
+.faq-contact h3 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #111111;
+	margin-bottom: 10px;
+}
+.chat-btn {
+    background: #e53637;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.chat-btn:hover {
+    background: #c12c2e;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* END FAQ SECTION STYLE */
+
+/* Chat Container style */
+#chat-icon {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+  }
+  
+  /* Chat Container Modal */
+  #chat-container {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 300px;
+	height: 400px;
+	scroll-behavior: smooth;
+	overflow-y: auto;
+	background-color: #f1f1f1;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	z-index: 1000;
+  }
+  
+  /* Chatbox */
+  #chatbox {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #chat-icon i{
+	  font-size: 30px;
+	  text-shadow: #000;
+	  font-weight: 900;
+	  color: #D35400;
+  }
+  
+  /* Chat Messages */
+  #chat-messages {
+	overflow-y: scroll;
+	flex-grow: 1;
+	padding: 10px;
+	font-family: Arial, sans-serif;
+  }
+  
+  /* Input and Button */
+  #chat-input {
+	padding: 10px;
+	width: 285px;
+	margin-top: 320px;
+	border: none;
+	border-top: 1px solid #ccc;
+	font-size: 14px;
+	position: fixed;
+  }
+  
+  #send-btn, #close-btn {
+	padding: 10px;
+	background-color: #333;
+	color: white;
+	border: none;
+	cursor: pointer;
+	
+  }
+  #send-btn{
+	margin-top: 360px;
+	width: 285px;
+	position: fixed;
+  }
+  #close-btn {
+	position: fixed;
+  }
+  #send-btn:hover, #close-btn:hover {
+	background-color: #555;
+  }
+  
+  /* Close Button */
+  #close-btn {
+	position: fixed;
+	right: 10px;
+  }
+  
+  .whatsapp-button {
+	background-color: #25D366;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 10px;
+	border: none;
+  }
+  
+  .whatsapp-button:hover {
+	background-color: #128C7E;
+  }
+  
+/* Chat container End */
 /*---------------------
   Footer
 -----------------------*/
@@ -2920,8 +2898,7 @@ ol {
 /* Gpt Shop */
   /* Image Grid Section */
 /* ---- General Section Styling ---- */
-/* ---- Section Styling ---- */
-/* ---- Section Styling ---- */
+
 .image-section {
     padding: 5rem 5%;
     background: #2C2C2C; /* Dark, premium background */
@@ -3507,9 +3484,8 @@ ol {
 } 
 
 
-/* gpt shoping cart  */
+/* shoping cart  */
 
-/* End gpt */
 /*---------------------
   Checkout
 -----------------------*/
@@ -4950,3 +4926,107 @@ ol {
 	}
   }
 /* End */
+
+
+/* state section custom jackets  Section */
+/* Custom Jacket Link */
+.stat-box a.custom-jacket-link {
+    color: #e53637;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 3px 0;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.stat-box a.custom-jacket-link:hover {
+    color: #222;
+}
+
+.stat-box a.custom-jacket-link img {
+    width: 32px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.stat-box a.custom-jacket-link:hover img {
+    transform: rotate(10deg);
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f6f6f6, #e0e0e0);
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Stat Box Styling */
+.stat-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.stat-box:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon Styling */
+.stat-box i {
+    font-size: 45px;
+    color: #e53637;
+    animation: popEffect 1s ease-in-out infinite alternate;
+}
+
+/* Heading Styling */
+.stat-box h2 {
+    font-size: 30px;
+    margin: 12px 0;
+    color: #222;
+    font-weight: 800;
+}
+
+/* Paragraph Styling */
+.stat-box p {
+    font-size: 18px;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Floating Animation for Icons */
+@keyframes popEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* end state section custom jackets */
